@@ -1,4 +1,4 @@
-export * from "./src/errors/BadRequest"
+export  * from "./src/errors/BadRequest"
 export * from "./src/errors/CustomErrorValidation"
 export * from "./src/errors/DatabaseConnection"
 export * from "./src/errors/InvalidCredential"
