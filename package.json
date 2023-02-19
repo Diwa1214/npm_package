@@ -3,9 +3,9 @@
   "version": "1.0.7",
   "description": "",
   "main": "./build/index.js",
-  "type": "module",
+  "types": "./build/index.d.ts",
   "files": [
-    "./build/**/*"
+    "build/**/*"
   ],
   "scripts": {
     "clean": "del ./build/*",
