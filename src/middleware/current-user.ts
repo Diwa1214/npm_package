@@ -25,3 +25,5 @@ export const currentUser = function(req:Request,res:Response,next:NextFunction){
   return res.status(200).send({currentuser:req.currentUser})
 
 }
+
+// Comment
