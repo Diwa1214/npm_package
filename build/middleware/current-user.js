@@ -16,3 +16,4 @@ const currentUser = function (req, res, next) {
     return res.status(200).send({ currentuser: req.currentUser });
 };
 exports.currentUser = currentUser;
+// Comment
