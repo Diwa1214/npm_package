@@ -16,7 +16,7 @@ declare global{
 }
 
 export const currentUser = function(req:Request,res:Response,next:NextFunction){
-  if(req.session?.jwt == null){
+  if(req.session?.jwt! == null){
     req.currentUser = null 
     next()
   }
