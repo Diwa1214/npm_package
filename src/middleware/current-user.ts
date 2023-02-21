@@ -18,12 +18,12 @@ declare global{
 
 export const currentUser = function(req:Request,res:Response,next:NextFunction){
   console.log(req?.session)
-  // if(req.session?.jwt! == null){
-  //   req.currentUser = null 
-  //   next()
-  // }
-  // const decodeJwt = jwt.verify(req.session?.jwt,process.env.JWTAUTH!) as userPayload
-  // req.currentUser = decodeJwt 
-  // return res.status(200).send({currentuser:req.currentUser})
+  if(req.session?.jwt == null){
+    req.currentUser = null 
+    next()
+  }
+  const decodeJwt = jwt.verify(req.session?.jwt,process.env.JWTAUTH!) as userPayload
+  req.currentUser = decodeJwt 
+  return res.status(200).send({currentuser:req.currentUser})
 
 }
