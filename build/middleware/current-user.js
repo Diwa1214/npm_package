@@ -11,7 +11,7 @@ const currentUser = function (req, res, next) {
         req.currentUser = null;
         next();
     }
-    const decodeJwt = jsonwebtoken_1.default.verify((_b = req.session) === null || _b === void 0 ? void 0 : _b.jwt, process.env.JWTAUTH);
+    const decodeJwt = jsonwebtoken_1.default.verify((_b = req.session) === null || _b === void 0 ? void 0 : _b.jwt, 'jwt-secret');
     req.currentUser = decodeJwt;
     return res.status(200).send({ currentuser: req.currentUser });
 };
