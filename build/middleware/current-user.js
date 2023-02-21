@@ -7,7 +7,6 @@ exports.currentUser = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const currentUser = function (req, res, next) {
     var _a, _b;
-    console.log(req === null || req === void 0 ? void 0 : req.session);
     if (((_a = req.session) === null || _a === void 0 ? void 0 : _a.jwt) == null) {
         req.currentUser = null;
         next();

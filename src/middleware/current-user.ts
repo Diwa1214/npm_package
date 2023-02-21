@@ -21,7 +21,7 @@ export const currentUser = function(req:Request,res:Response,next:NextFunction){
     req.currentUser = null 
     next()
   }
-  const decodeJwt = jwt.verify(req.session?.jwt,process.env.JWTAUTH!) as userPayload
+  const decodeJwt = jwt.verify(req.session?.jwt,'jwt-secret') as userPayload
   req.currentUser = decodeJwt 
   return res.status(200).send({currentuser:req.currentUser})
 
