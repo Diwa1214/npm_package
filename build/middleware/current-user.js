@@ -1,14 +1,19 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.currentUser = void 0;
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const currentUser = function (req, res, next) {
+    var _a, _b;
     console.log(req === null || req === void 0 ? void 0 : req.session);
-    // if(req.session?.jwt! == null){
-    //   req.currentUser = null 
-    //   next()
-    // }
-    // const decodeJwt = jwt.verify(req.session?.jwt,process.env.JWTAUTH!) as userPayload
-    // req.currentUser = decodeJwt 
-    // return res.status(200).send({currentuser:req.currentUser})
+    if (((_a = req.session) === null || _a === void 0 ? void 0 : _a.jwt) == null) {
+        req.currentUser = null;
+        next();
+    }
+    const decodeJwt = jsonwebtoken_1.default.verify((_b = req.session) === null || _b === void 0 ? void 0 : _b.jwt, process.env.JWTAUTH);
+    req.currentUser = decodeJwt;
+    return res.status(200).send({ currentuser: req.currentUser });
 };
 exports.currentUser = currentUser;
