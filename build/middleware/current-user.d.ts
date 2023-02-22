@@ -10,5 +10,5 @@ declare global {
         }
     }
 }
-export declare const currentUser: (req: Request, res: Response, next: NextFunction) => Response<any, Record<string, any>>;
+export declare const currentUser: (req: Request, res: Response, next: NextFunction) => void;
 export {};
