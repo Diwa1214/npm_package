@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 interface userPayload {
     email: string;
     password: string;
+    id: string;
 }
 declare global {
     namespace Express {
