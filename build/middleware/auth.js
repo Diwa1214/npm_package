@@ -6,5 +6,6 @@ const Auth = function (req, res, next) {
     if (req.currentUser == null) {
         throw new InvalidCredential_1.InvalidCredentialError();
     }
+    next();
 };
 exports.Auth = Auth;
