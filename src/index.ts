@@ -10,6 +10,13 @@ export * from "./middleware/error_handler"
 export * from "./middleware/validate-error"
 
 
-// This is
+// This is for events
+
+export * from "./nats/interface/base_event_type"
+export * from "./nats/interface/subject"
+
+export * from "./nats/listener/BaseListener"
+export * from "./nats/publisher/BasePublisher"
+
 
 
